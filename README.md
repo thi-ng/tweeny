@@ -1,8 +1,8 @@
 # tweeny
 
-Interpolation of arbitrary nested values, completely customizable.
+Interpolation of arbitrary nested values, completely customizable, CLJ & CLJS compatible.
 
-Project is in the process of being converted into the literate programming format used by other thi.ng libs and is going to be ported to CLJX.
+After a long hiatus, this project is in the process of being converted into the same literate programming format as used by other thi.ng libs. More examples & documentation forthcoming.
 
 ## Example
 
