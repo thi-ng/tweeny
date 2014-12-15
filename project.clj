@@ -14,12 +14,13 @@
   :profiles     {:dev {:dependencies [[org.clojure/clojurescript "0.0-2411"]]
                        :plugins [[com.keminglabs/cljx "0.5.0"]
                                  [lein-cljsbuild "1.0.4-SNAPSHOT"]
-                                 [com.cemerick/clojurescript.test "0.3.1"]]
+                                 [com.cemerick/clojurescript.test "0.3.3"]]
                        :global-vars {*warn-on-reflection* true}
                        :jvm-opts ^:replace []
                        :auto-clean false
-                       :prep-tasks [["cljx" "once"] "javac" "compile"]
-                       :aliases {"cleantest" ["do" "clean," "cljx" "once," "test," "cljsbuild" "test"]}}}
+                       :prep-tasks [["cljx" "once"]]
+                       :aliases {"cleantest" ["do" "clean," "cljx" "once," "test," "cljsbuild" "test"]
+                                 "deploy"    ["do" "clean," "cljx" "once," "deploy" "clojars"]}}}
 
   :cljx         {:builds [{:source-paths ["src/cljx"]
                            :output-path "target/classes"
@@ -41,6 +42,8 @@
                                       :pretty-print true}}]
                  :test-commands {"unit-tests" ["phantomjs" :runner "target/tweeny-0.1.0-SNAPSHOT.js"]}}
 
+  :jar-exclusions [#"\.cljx|\.DS_Store"]
+  
   :pom-addition [:developers [:developer
                               [:name "Karsten Schmidt"]
                               [:url "http://postspectacular.com"]
