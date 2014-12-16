@@ -7,9 +7,9 @@
 (defn in-range?
   "Returns true if min <= x <= max."
   ([[min max] x]
-     (and (>= x min) (<= x max)))
+     (<= min x max))
   ([min max x]
-     (and (>= x min) (<= x max))))
+     (<= min x max)))
 
 (defn map-interval
   "Maps x from one interval into another, but does not clamp x or
