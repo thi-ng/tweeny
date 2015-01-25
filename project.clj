@@ -11,9 +11,10 @@
 
   :dependencies [[org.clojure/clojure "1.6.0"]]
 
-  :profiles     {:dev {:dependencies [[org.clojure/clojurescript "0.0-2411"]]
+  :profiles     {:dev {:dependencies [[org.clojure/clojurescript "0.0-2657"]
+                                      [criterium "0.4.3"]]
                        :plugins [[com.keminglabs/cljx "0.5.0"]
-                                 [lein-cljsbuild "1.0.4-SNAPSHOT"]
+                                 [lein-cljsbuild "1.0.4"]
                                  [com.cemerick/clojurescript.test "0.3.3"]]
                        :global-vars {*warn-on-reflection* true}
                        :jvm-opts ^:replace []
